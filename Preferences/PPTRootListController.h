@@ -11,14 +11,14 @@
 {
     UITableView *_table;
 }
-@property(nonatomic, retain) UIBarButtonItem *respringButton;
+@property(nonatomic, retain) UIBarButtonItem *closePhotosButton;
 @property(nonatomic, retain) UIView *headerView;
 @property(nonatomic, retain) UIImageView *headerImageView;
 @property(nonatomic) float headerWidth;
 @property(nonatomic) float headerHeight;
 @property(nonatomic) float headerAspectRatio;
 @property(nonatomic, retain) UILabel *titleLabel;
-- (void)respring;
+- (void)closePhotos;
 @end
 
 @interface MFMailComposeViewController: UINavigationController

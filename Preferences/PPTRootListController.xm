@@ -1,6 +1,8 @@
 #include "PPTRootListController.h"
 #import "spawn.h"
 
+int (*BKSTerminateApplicationForReasonAndReportWithDescription)(NSString *displayIdentifier, int reason, int something, int something2);
+
 @implementation PPTRootListController
 
 - (instancetype)init
@@ -11,9 +13,10 @@
 	{
         PPTAppearanceSettings *appearanceSettings = [[PPTAppearanceSettings alloc] init];
         self.hb_appearanceSettings = appearanceSettings;
-        self.respringButton = [[UIBarButtonItem alloc] initWithTitle: @"Respring" style: UIBarButtonItemStylePlain target: self action: @selector(respring)];
-        self.respringButton.tintColor = [UIColor blackColor];
-        self.navigationItem.rightBarButtonItem = self.respringButton;
+
+        self.closePhotosButton = [[UIBarButtonItem alloc] initWithTitle: @"Close Photos" style: UIBarButtonItemStylePlain target: self action: @selector(closePhotos)];
+        self.closePhotosButton.tintColor = [UIColor blackColor];
+        self.navigationItem.rightBarButtonItem = self.closePhotosButton;
 
         self.navigationItem.titleView = [UIView new];
         self.titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, 10, 10)];
@@ -109,11 +112,13 @@
 	return _specifiers;
 }
 
-- (void)respring
+- (void)closePhotos
 {
-	pid_t pid;
-	const char *args[] = {"sbreload", NULL, NULL, NULL};
-	posix_spawn(&pid, "usr/bin/sbreload", NULL, NULL, (char *const *)args, NULL);
+    void *bk = dlopen("/System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices", RTLD_LAZY);
+	if (bk) {
+		BKSTerminateApplicationForReasonAndReportWithDescription = (int (*)(NSString*, int, int, int))dlsym(bk, "BKSTerminateApplicationForReasonAndReportWithDescription");
+	}
+    BKSTerminateApplicationForReasonAndReportWithDescription(@"com.apple.mobileslideshow", 1, 0, 0);
 }
 
 - (void)email
