@@ -4,7 +4,7 @@ TARGET = iphone:clang:11.2:11.2
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = PerfectPhotos13Prefs
-PerfectPhotos13Prefs_FILES = PPTAppearanceSettings.m PPTRootListController.xm
+PerfectPhotos13Prefs_FILES = PPTAppearanceSettings.m PPTRootHeaderView.mm PPTRootListController.xm
 PerfectPhotos13Prefs_INSTALL_PATH = /Library/PreferenceBundles
 PerfectPhotos13Prefs_FRAMEWORKS = UIKit
 PerfectPhotos13Prefs_PRIVATE_FRAMEWORKS = Preferences
