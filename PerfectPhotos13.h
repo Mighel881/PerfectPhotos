@@ -1,12 +1,3 @@
-#import <Cephei/HBPreferences.h>
-
-HBPreferences *_Nullable pref;
-
-BOOL allowSelectAll;
-BOOL unlimitedZoom;
-BOOL skipDeleteConfirm;
-BOOL photoInfo;
-
 @interface PUOneUpViewController : UIViewController
 - (id _Nullable)pu_debugCurrentAsset;
 @end

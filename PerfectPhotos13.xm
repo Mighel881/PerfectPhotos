@@ -1,5 +1,13 @@
 #import "PerfectPhotos13.h"
 
+#import <Cephei/HBPreferences.h>
+
+static HBPreferences *pref;
+static BOOL allowSelectAll;
+static BOOL unlimitedZoom;
+static BOOL skipDeleteConfirm;
+static BOOL photoInfo;
+
 // ------------------------- ALLOW SELECT ALL IN ALBUMS -------------------------
 
 %group allowSelectAllGroup

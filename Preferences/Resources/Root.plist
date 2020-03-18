@@ -87,6 +87,8 @@
 			<string>PSGroupCell</string>
 			<key>label</key>
 			<string>ABOUT ME</string>
+			<key>footerText</key>
+			<string>© 2020 John Zarogiannis (johnzaro)</string>
         </dict>
 		<dict>
 			<key>big</key>
@@ -130,12 +132,6 @@
 			<key>url</key>
    	 		<string>https://paypal.me/JohnZarogiannis</string>
         </dict>
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerText</key>
-			<string>© 2020 John Zarogiannis (johnzaro)</string>
-		</dict>
 	</array>
 	<key>title</key>
 	<string>NetworkSpeed13</string>

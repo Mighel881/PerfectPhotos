@@ -1,5 +1,4 @@
 #include "PPTRootListController.h"
-#import "spawn.h"
 
 int (*BKSTerminateApplicationForReasonAndReportWithDescription)(NSString *displayIdentifier, int reason, int something, int something2);
 
