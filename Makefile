@@ -3,13 +3,14 @@ ARCHS = arm64 arm64e
 TARGET = iphone:clang:13.2:13.2
 
 INSTALL_TARGET_PROCESSES = MobileSlideShow Preferences
+GO_EASY_ON_ME = 1
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = PerfectPhotos13
-PerfectPhotos13_FILES = PerfectPhotos13.xm
-PerfectPhotos13_CFLAGS = -fobjc-arc
-PerfectPhotos13_EXTRA_FRAMEWORKS += Cephei
+TWEAK_NAME = PerfectPhotos
+PerfectPhotos_FILES = PerfectPhotos.xm
+PerfectPhotos_CFLAGS = -fobjc-arc
+PerfectPhotos_EXTRA_FRAMEWORKS += Cephei
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
